@@ -1,0 +1,18 @@
+#page-landing{
+/* Rectangle 12 */
+
+
+position: absolute;
+width: 310px;
+height: 624px;
+left: 51px;
+top: 203px;
+
+background: #FFFFFF;
+box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.03);
+border-radius: 20px;
+}
+
+.fundo {
+    /* background: #BCBABA; */
+}

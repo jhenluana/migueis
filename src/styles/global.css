@@ -1,0 +1,19 @@
+*{  
+ margin: 0;
+ padding: 0; 
+box-sizing: border-box;
+}
+
+body{
+ color: #000000;
+ background: #e90707;
+
+}
+body, input, button, textarea{
+    font: 500 17px Poppins, normal;
+    color: #000000;
+    background-color:rgba(0, 0, 0, 0.04);
+    background: rgba(0, 0, 0, 0.04);
+
+
+}
