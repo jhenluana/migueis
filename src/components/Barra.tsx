@@ -11,7 +11,7 @@ import grey from '@material-ui/core/colors/grey';
 const useStyles = makeStyles((theme: Theme) =>
 createStyles({
   root: {
-    width: 420,
+    width: '100%',
     height: 50,
     position: 'fixed',
     bottom: 0,
