@@ -29,9 +29,9 @@ const useStyles = makeStyles({
 
 // const classes = useStyles();
 
-export default class Pedidos extends Component {
+export default class Comanda extends Component {
   state = {
-    rows: []
+    pedidos: []
   }
   // constructor(props) {
   //   super(props);
@@ -41,34 +41,36 @@ export default class Pedidos extends Component {
   // }
 
 
-  componentDidMount() {
-    const tmp = JSON.parse(localStorage.getItem('comanda')) || [];
-    const tmp1 = tmp.filter(p => (p.qtd > 0));
-    this.setState({ rows: tmp1 })
-    console.log(this.state.rows)
-  }
-  // const [comanda, setComanda] = useState();
-  // const [rows,setRows] = useState(JSON.parse(localStorage.getItem('comanda')))
-  // useEffect(()=>{
-  //   setRows(JSON.parse(localStorage.getItem('comanda')));
-  //   console.log(rows);
-  // },[])
-  handlePedido() {
-    api.post('/comanda/adicionar', {
-      mesa: 10, cliente: "Artur",
-      pedidos: this.state.rows
-    }).then(response => {
-      console.log(response)
-      localStorage.removeItem('comanda')
-    });
+  async componentDidMount() {
+    await api.get('/comanda/listar').then( response =>{
+      const tmp = response.data;
+      const tmp1 = tmp.filter(p => (p.mesa===10 && p.pedidos.length > 0));
+      const tmp2 = tmp1.map(p => {return p.pedidos});
+      const tmp3 = tmp2.flat();
+      var result = [];
+      tmp3.forEach(function(item) {
+          if(result.indexOf(item) < 0) {
+              result.push(item);
+          }
+      });
+      console.log("uniq",uniq)
 
+     
+    //  console.log(sums);
+      
+      // console.log(tmp3)
+    this.setState({ pedidos: tmp3})
+    console.log(this.state.pedidos)
+  }
+    )
   }
 
   //JSON.parse(localStorage.getItem('comanda') || '');
   render() {
 
-    const {rows} = this.state;
-    if (rows.length === 0) {
+    const {pedidos} = this.state;
+    // const pedido = pedidos.map(p => {return p.pedidos});
+    if (pedidos.length === 0) {
       return (<div className="page-pedidos">
         Sem pedidos
         <footer className="footer">
@@ -84,31 +86,33 @@ export default class Pedidos extends Component {
       <Link to="/app" className="voltar">
         <FiChevronLeft size={32} color="#000000" />
       </Link> */}
-          <TableContainer style={{paddingBottom:'50px'}}>
-            <Table size="small" aria-label="a dense table">
+          <TableContainer >
+            {/* {pedido.map(p => ( */}
+              <Table size="small" aria-label="a dense table">
               <TableHead>
                 <TableRow>
                   <TableCell>Produto</TableCell>
-                  <TableCell align="right">Quantidade</TableCell>
+                  {/* <TableCell align="right">Quantidade</TableCell> */}
                 </TableRow>
               </TableHead>
               <TableBody>
-                {rows.map((row) => (
-                  <TableRow key={row.nome}>
-                    <TableCell component="th" scope="row">{row.nome}</TableCell>
-                    <TableCell align="right">{row.qtd}</TableCell>
+                {pedidos.map((row) => (
+                  <TableRow key={row.produto}>
+                    <TableCell component="th" scope="row">{row.produto}</TableCell>
+                    {/* <TableCell align="right">{row.qtd}</TableCell> */}
                   </TableRow>
                 ))}
               </TableBody>
             </Table>
+            {/* ))} */}
           </TableContainer>
           <main>
 
           </main>
 
-          <Button className="btn_button" color="primary" onClick={() => this.handlePedido()}>
+          {/* <Button className="btn_button" color="primary" onClick={() => this.handlePedido()}>
             Enviar Pedido
-                </Button>
+                </Button> */}
 
 
           <footer className="footer">

@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     width: '100%',
     backgroundColor: grey[200],
-    paddingBottom:'50px'
+    marginBottom:'50px';
   },
 }));
 
