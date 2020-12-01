@@ -1,7 +1,8 @@
 import React from 'react'
 // import { Button } from '@material-ui/core';
-import logoImg from '../images/logoeclipse.svg';
+import logoImg from '../images/logo 1.svg';
 import '../styles/pages/init.css';
+import fundo from '../images/fundo.jpg';
 
 import Button from '@material-ui/core/Button';
 
@@ -11,10 +12,10 @@ function inicio() {
               <img src={logoImg} alt="Miguéis"/> 
     
               <main>
-              <h5>Bem Vindo</h5>
+
               </main>
               <Button className="btn_cardapio" color="primary" href="/app">
-                  Cardapio
+                  Cardápio
                 </Button>
 
             

@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,400;0,700;1,200&display=swap");
+
+
+.container_cabecalho{
+  background-image: url("file:///home/jheniffer/www/web/src/images/fundo.jpg");
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+ 
+ }
+ 
+.container_cabecalho {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+}
+
+.container_cabecalho img {
+  position: center;
+  width: 200.21px;
+height: 200.21px;
+}
+
+.container_cabecalho .header h5 {
+    position:fixed;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 54px;
+  font-family: Nunito, sans-serif;
+  color: #000;
+}
+.container_cabecalho .header{
+    position: fixed;
+    margin-top: 0px;
+    width: 314px;
+    height: 70px;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 54px;
+    font-family: Nunito, sans-serif;
+    color: #000;
+
+}
+
+.container_cabecalho .btn_cardapio {
+  margin-top: 350px;
+  position: absolute;
+  width: 314px;
+  height: 70px;
+  /* left: 50px; */
+  /* top: 549px; */
+
+  background: #fa4a0c;
+  border: #fa4a0c solid 1px;
+  border-radius: 30px;
+  color: rgb(255, 255, 255);
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 25px;
+}

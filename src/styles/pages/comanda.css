@@ -1,0 +1,48 @@
+
+.page-comanda h2{
+    position: absolute;
+    width: 75px;
+    height: 27px;
+    left: 169px;
+    top: 61px;
+    
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 27px;
+    /* identical to box height */
+    
+    
+    color: #000000;
+    }
+    .voltar{
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 41px;
+    top: 60px;
+    
+    }
+    .page-pedidos .btn_button{
+    position: absolute;
+    width: 314px;
+    height: 70px;
+    left: 50px;
+    top: 600px;
+    
+    background: #FA4A0C;
+    border-radius: 30px;
+    
+    
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 25px;
+    /* identical to box height */
+    
+    text-align: center;
+    
+    color: #F6F6F9;
+    }
